@@ -8,6 +8,10 @@ public class apiSign {
 	
 	ArrayList<Material> sign = new ArrayList<Material>();
 	
+	public apiSign() {
+		AllSign();
+	}
+	
 	public ArrayList<Material> AllSign() {
 		for(Material signm : Material.values())
 			if(signm.name().contains("SIGN")) {
