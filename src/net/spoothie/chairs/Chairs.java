@@ -23,6 +23,7 @@ public class Chairs extends JavaPlugin{
 	private File pluginFolder;
 	private File configFile;
 
+	//Actuellement le plugin ne fonctionne pas vraiment !
 	
 	@Override
 	public void onEnable() {
