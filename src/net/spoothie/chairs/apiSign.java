@@ -2,6 +2,7 @@ package net.spoothie.chairs;
 
 import java.util.ArrayList;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 
 public class apiSign {
@@ -25,6 +26,7 @@ public class apiSign {
 	public boolean contain(Material material) {
 		if(!sign.isEmpty()) {
 			if(sign.contains(material)) {
+				Bukkit.broadcastMessage("Debug : "+ material.name());
 				return true;
 			}
 		}else {
