@@ -21,10 +21,14 @@ public class apiSign {
 			}
 		return sign;
 	}
-	
+
 	public boolean contain(Material material) {
-		if(sign.contains(material)) {
-			return true;
+		if(!sign.isEmpty()) {
+			if(sign.contains(material)) {
+				return true;
+			}
+		}else {
+			AllSign();
 		}
 		return false;
 	}
