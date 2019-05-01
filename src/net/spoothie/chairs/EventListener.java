@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.bukkit.Location;
-import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Entity;
@@ -205,13 +204,13 @@ public class EventListener implements Listener {
 		return width;
 	}
 
-	@SuppressWarnings("deprecation")
 	private boolean checkSign(Block block, BlockFace face) {
+		apiSign sign = new apiSign();
 		// Go through the blocks next to the clicked block and check if are signs on the end.
 		for(int i = 1; true; i++) {
 			Block relative = block.getRelative(face, i);
 			if(!plugin.allowedBlocks.contains(relative.getType()) || (block instanceof Stairs && ((Stairs)relative.getState().getData()).getDescendingDirection() != ((Stairs)block.getState().getData()).getDescendingDirection())) {
-				if(relative.getType() == Material.SIGN || relative.getType() == Material.WALL_SIGN || relative.getType() == Material.LEGACY_SIGN_POST)
+				if(sign.contain(relative.getType()))
 					return true;
 				else
 					return false;
